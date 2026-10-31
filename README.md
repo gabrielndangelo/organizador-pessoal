@@ -116,5 +116,7 @@ Mais do que desenvolver uma ferramenta de organização, este projeto representa
 A proposta é construir uma aplicação útil, evoluindo sua estrutura gradualmente e consolidando conceitos de lógica de programação, orientação a objetos e manipulação de coleções.
 
 **Projeto pessoal em desenvolvimento.**
+
 **Autor: Gabriel do Nascimento D'angelo**
+
 **Última atualização: 30/10/2026**
