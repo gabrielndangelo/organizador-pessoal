@@ -1,139 +1,137 @@
-
-
 # Organizador Pessoal
 
-Um organizador pessoal desenvolvido em Java, com o objetivo de centralizar compromissos, avisos e tarefas em uma única aplicação de terminal.
+Um organizador pessoal desenvolvido em Java, com o objetivo de centralizar compromissos, avisos e tarefas em uma Ãºnica aplicaÃ§Ã£o de terminal.
 
-O projeto surgiu de uma necessidade cotidiana: organizar atividades que normalmente ficam distribuídas entre o Google Tarefas, Google Calendar e anotações físicas em um planner. A proposta é transformar essa experiência em uma aplicação própria, utilizando os conceitos de programação e orientação a objetos estudados durante minha formação em Java.
-
+O projeto surgiu de uma necessidade cotidiana: organizar atividades que normalmente ficam distribuÃ­das entre o Google Tarefas, Google Calendar e anotaÃ§Ãµes fÃ­sicas em um planner. A proposta Ã© transformar essa experiÃªncia em uma aplicaÃ§Ã£o prÃ³pria, utilizando os conceitos de programaÃ§Ã£o e orientaÃ§Ã£o a objetos estudados durante minha formaÃ§Ã£o em Java.
 
 ## 1. Origem e proposta
 
-A ideia inicial foi criar uma ferramenta simples para reunir três necessidades da organização pessoal:
+A ideia inicial foi criar uma ferramenta simples para reunir trÃªs necessidades da organizaÃ§Ã£o pessoal:
 
-- **Eventos:** registrar compromissos com data e horário.
-- **Avisos:** guardar informações e lembretes que precisam permanecer acessíveis.
+- **Eventos:** registrar compromissos com data e horÃ¡rio.
+- **Avisos:** guardar informaÃ§Ãµes e lembretes que precisam permanecer acessÃ­veis.
 - **Tarefas:** organizar atividades, acompanhar seu andamento e dividi-las em subtarefas.
 
-O desenvolvimento começou com um planejamento das funcionalidades, dos menus e das classes necessárias para representar cada elemento do sistema.
+O desenvolvimento comeÃ§ou com um planejamento das funcionalidades, dos menus e das classes necessÃ¡rias para representar cada elemento do sistema.
 
-Uma das preocupações desde o início foi manter uma estrutura organizada, separando a lógica de navegação das entidades responsáveis por representar os dados.
-
+Uma das preocupaÃ§Ãµes desde o inÃ­cio foi manter uma estrutura organizada, separando a lÃ³gica de navegaÃ§Ã£o das entidades responsÃ¡veis por representar os dados.
 
 ## 2. Desenvolvimento
 
-A implementação foi realizada gradualmente, utilizando os fundamentos de Java e Programação Orientada a Objetos.
+A implementaÃ§Ã£o foi realizada gradualmente, utilizando os fundamentos de Java e ProgramaÃ§Ã£o Orientada a Objetos.
 
-A aplicação possui um menu principal que permite acessar os três módulos independentes: Eventos, Avisos e Tarefas.
+A aplicaÃ§Ã£o possui um menu principal que permite acessar os trÃªs mÃ³dulos independentes: Eventos, Avisos e Tarefas.
 
 Durante o desenvolvimento, foram utilizados conceitos como:
 
-- Classes, atributos e métodos;
+- Classes, atributos e mÃ©todos;
 - Encapsulamento e construtores;
-- Enumerações (`enum`);
-- Listas dinâmicas com `ArrayList`;
-- Manipulação e remoção de elementos;
-- Ordenação de coleções com `Comparator`;
-- Expressões lambda;
-- Manipulação de datas e horários com a API `java.time`;
-- Estruturas condicionais e de repetição;
-- Modularização por meio de métodos.
+- EnumeraÃ§Ãµes (`enum`);
+- Listas dinÃ¢micas com `ArrayList`;
+- ManipulaÃ§Ã£o e remoÃ§Ã£o de elementos;
+- OrdenaÃ§Ã£o de coleÃ§Ãµes com `Comparator`;
+- ExpressÃµes lambda;
+- ManipulaÃ§Ã£o de datas e horÃ¡rios com a API `java.time`;
+- Estruturas condicionais e de repetiÃ§Ã£o;
+- ModularizaÃ§Ã£o por meio de mÃ©todos.
 
-
-## 3. Funcionalidades da versão 1.0
+## 3. Funcionalidades da versÃ£o 1.0
 
 ### Eventos
-- Cadastro de eventos ou compromissos com nome, data e horário.
-- Adição opcional de categoria.
-- Consulta dos próximos eventos.
-- Identificação e negação de eventos com datas anteriores à data atual.
-- Remoção de eventos pelo nome, ignorando diferenças entre letras maiúsculas e minúsculas.
-- Ordenação dos eventos por data.
-- Exibição dos horários no formato de 12 horas (AM/PM).
+
+- Cadastro de eventos ou compromissos com nome, data e horÃ¡rio.
+- AdiÃ§Ã£o opcional de categoria.
+- Consulta dos prÃ³ximos eventos.
+- IdentificaÃ§Ã£o e negaÃ§Ã£o de eventos com datas anteriores Ã  data atual.
+- RemoÃ§Ã£o de eventos pelo nome, ignorando diferenÃ§as entre letras maiÃºsculas e minÃºsculas.
+- OrdenaÃ§Ã£o dos eventos por data de realizaÃ§Ã£o.
+- ExibiÃ§Ã£o dos horÃ¡rios no formato de 12 horas (AM/PM).
 
 ### Avisos
-- Cadastro de avisos com título e descrição.
+
+- Cadastro de avisos com tÃ­tulo e descriÃ§Ã£o.
 - Consulta dos avisos registrados.
-- Ordenação alfabética pelo título.
-- Remoção de avisos pelo título, sem distinção entre letras maiúsculas e minúsculas.
+- OrdenaÃ§Ã£o alfabÃ©tica pelo tÃ­tulo.
+- RemoÃ§Ã£o de avisos pelo tÃ­tulo (sem distinÃ§Ã£o entre letras maiÃºsculas e minÃºsculas)
 
 ### Tarefas
+
 - Cadastro de tarefas com nome.
-- Adição opcional de data e categoria.
-- Criação de subtarefas vinculadas a uma tarefa principal.
-- Identificação do estado da tarefa por meio de enumeração (`StatusTarefa`).
+- AdiÃ§Ã£o opcional de data e categoria.
+- CriaÃ§Ã£o de subtarefas vinculadas a uma tarefa principal.
+- IdentificaÃ§Ã£o do estado da tarefa por meio de enumeraÃ§Ã£o (`StatusTarefa`).
 - Consulta exclusiva das tarefas pendentes.
-- Conclusão de tarefas sem a necessidade de removê-las manualmente da lista.
-- Remoção de tarefas pelo nome.
-- Ordenação por data, mantendo tarefas sem data ao final da lista.
+- ConclusÃ£o de tarefas sem a necessidade de removÃª-las manualmente da lista.
+- RemoÃ§Ã£o de tarefas pelo nome.
+- OrdenaÃ§Ã£o por data, mantendo tarefas sem data ao final da lista.
 
-## 3.1. Melhorias implementadas na versão 1.1 - Tratamento de exceções
+## 3.1. Melhorias implementadas na versÃ£o 1.1 â€” Tratamento de exceÃ§Ãµes
 
-Durante a evolução do projeto, foram iniciadas melhorias para aumentar a confiabilidade das entradas fornecidas pelo usuário e evitar interrupções inesperadas durante a execução.
+Durante a evoluÃ§Ã£o do projeto, foram iniciadas melhorias para aumentar a confiabilidade das entradas fornecidas pelo usuÃ¡rio e evitar interrupÃ§Ãµes inesperadas durante a execuÃ§Ã£o.
 
-As alterações incluem:
+As alteraÃ§Ãµes incluem:
 
-- Implementação de blocos `try-catch` para tratamento de entradas numéricas inválidas nos menus.
-- Tratamento de erros de conversão de datas e horários por meio de `DateTimeParseException`.
-- Validação de datas para impedir o cadastro de eventos com datas anteriores ao dia atual.
-- Implementação de estruturas de repetição para permitir que o usuário corrija informações inválidas sem precisar reiniciar a aplicação.
-- Utilização de `InputMismatchException` para identificar entradas incompatíveis com o tipo numérico esperado.
+- ImplementaÃ§Ã£o de blocos `try-catch` para tratamento de entradas numÃ©ricas invÃ¡lidas nos menus.
+- Tratamento de erros de conversÃ£o de datas e horÃ¡rios por meio de `DateTimeParseException`.
+- ValidaÃ§Ã£o de datas para impedir o cadastro de eventos com datas anteriores ao dia atual.
+- ImplementaÃ§Ã£o de estruturas de repetiÃ§Ã£o para permitir que o usuÃ¡rio corrija informaÃ§Ãµes invÃ¡lidas sem precisar reiniciar a aplicaÃ§Ã£o.
+- UtilizaÃ§Ã£o de `InputMismatchException` para identificar entradas incompatÃ­veis com o tipo numÃ©rico esperado.
 
-Essas melhorias representam uma etapa importante na evolução do Life Manager, tornando a interação pelo terminal mais segura e controlada.
+Essas melhorias representam uma etapa importante na evoluÃ§Ã£o do Life Manager, tornando a interaÃ§Ã£o pelo terminal mais segura, previsÃ­vel e controlada.
 
 ## 4. Tecnologias e recursos utilizados
 
-| Tecnologia / Recurso | Aplicação no projeto |
+| Tecnologia / Recurso | AplicaÃ§Ã£o no projeto |
 |---|---|
 | Java | Linguagem principal |
-| Programação Orientada a Objetos | Organização das classes e responsabilidades |
-| ArrayList | Armazenamento e manipulação dos registros |
-| Java Time API | Tratamento de datas e horários |
-| Comparator | Ordenação de eventos, avisos e tarefas |
-| Enum | Representação dos estados das tarefas |
-| Scanner | Entrada de dados pelo usuário |
+| ProgramaÃ§Ã£o Orientada a Objetos | OrganizaÃ§Ã£o das classes e responsabilidades |
+| ArrayList | Armazenamento e manipulaÃ§Ã£o dos registros |
+| Java Time API | Tratamento de datas e horÃ¡rios |
+| Comparator | OrdenaÃ§Ã£o de eventos, avisos e tarefas |
+| Enum | RepresentaÃ§Ã£o dos estados das tarefas |
+| Scanner | Entrada de dados pelo usuÃ¡rio |
 | Eclipse IDE | Ambiente de desenvolvimento |
 
-## 5. Escopo da versão 1.0
+## 5. Escopo da versÃ£o 1.0
 
-Esta primeira versão concentra-se no funcionamento básico dos módulos e na manipulação dos registros durante a execução do programa.
+Esta primeira versÃ£o concentra-se no funcionamento bÃ¡sico dos mÃ³dulos e na manipulaÃ§Ã£o dos registros durante a execuÃ§Ã£o do programa.
 
-Algumas características importantes:
+Algumas caracterÃ­sticas importantes:
 
-- Aplicação executada pelo terminal.
-- Dados armazenados temporariamente em memória por meio de `ArrayList`.
-- Não possui integração com banco de dados.
-- Não possui tratamento específico de exceções.
-- Não possui salvamento permanente em arquivos.
-- Eventos e tarefas recorrentes ainda não foram implementados.
+- AplicaÃ§Ã£o executada pelo terminal.
+- Dados armazenados temporariamente em memÃ³ria por meio de `ArrayList`.
+- NÃ£o possui integraÃ§Ã£o com banco de dados.
+- NÃ£o possui tratamento especÃ­fico de exceÃ§Ãµes na versÃ£o inicial.
+- NÃ£o possui salvamento permanente em arquivos.
+- Eventos e tarefas recorrentes ainda nÃ£o foram implementados.
 
+Os registros sÃ£o mantidos enquanto o programa estÃ¡ em execuÃ§Ã£o. Ao encerrÃ¡-lo, os dados cadastrados sÃ£o perdidos.
 
-Os registros são mantidos enquanto o programa está em execução. Ao encerrá-lo, os dados cadastrados são perdidos.
+## 6. PrÃ³ximas etapas
 
-## 6. Próximas etapas
+O projeto foi pensado para receber melhorias progressivas, acompanhando o aprendizado e a implementaÃ§Ã£o de novos recursos.
 
-O projeto foi pensado para receber melhorias progressivas, acompanhando o aprendizado e a implementação de novos recursos.
+Entre as possibilidades para versÃµes futuras estÃ£o:
 
-Entre as possibilidades para versões futuras estão:
-
-- Salvamento e recuperação de dados em arquivos.
-- Implementação de eventos e tarefas recorrentes.
-- Desenvolvimento de um planner semanal com distribuição dos compromissos pelos dias da semana.
-- Melhorias na organização e apresentação das informações.
-- Possível evolução para uma interface gráfica.
-
+- Salvamento e recuperaÃ§Ã£o de dados em arquivos.
+- ImplementaÃ§Ã£o de eventos e tarefas recorrentes.
+- Desenvolvimento de um planner semanal com distribuiÃ§Ã£o dos compromissos pelos dias da semana.
+- Melhorias na organizaÃ§Ã£o e apresentaÃ§Ã£o das informaÃ§Ãµes.
+- PossÃ­vel evoluÃ§Ã£o para uma interface grÃ¡fica.
 
 ## 7. Objetivo de aprendizado
 
-Mais do que desenvolver uma ferramenta de organização, este projeto representa uma oportunidade de aplicar conhecimentos de Java em uma situação prática.
+Mais do que desenvolver uma ferramenta de organizaÃ§Ã£o, este projeto representa uma oportunidade de aplicar conhecimentos de Java em uma situaÃ§Ã£o prÃ¡tica cotidiana.
 
-A proposta é construir uma aplicação útil, evoluindo sua estrutura gradualmente e consolidando conceitos de lógica de programação, orientação a objetos e manipulação de coleções.
+A proposta Ã© construir uma aplicaÃ§Ã£o Ãºtil, evoluindo sua estrutura gradualmente e consolidando conceitos de lÃ³gica de programaÃ§Ã£o, orientaÃ§Ã£o a objetos e manipulaÃ§Ã£o de coleÃ§Ãµes.
 
 **Projeto pessoal em desenvolvimento.**
+
 **Autor: Gabriel do Nascimento D'angelo**
-**Última atualização: 23/11/2026**
 
-## 8. Histórico de versões
+**Ãšltima atualizaÃ§Ã£o: 23/11/2026**
 
-- **Versão 1.0:** Primeira versão funcional do Life Manager, com cadastro e gerenciamento de eventos, avisos e tarefas.
-- **Versão 1.1:** Início da implementação do tratamento de exceções, validação de entradas numéricas nos menus e tratamento de datas e horários inválidos no cadastro de eventos.
+## 8. HistÃ³rico de versÃµes
+
+- **VersÃ£o 1.0:** primeira versÃ£o funcional do Life Manager, com cadastro e gerenciamento de eventos, avisos e tarefas.
+- **VersÃ£o 1.1:** inÃ­cio da implementaÃ§Ã£o do tratamento de exceÃ§Ãµes, validaÃ§Ã£o de entradas numÃ©ricas nos menus e tratamento de datas e horÃ¡rios invÃ¡lidos no cadastro de eventos.
