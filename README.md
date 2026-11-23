@@ -1,11 +1,8 @@
-
-
 # Organizador Pessoal
 
 Um organizador pessoal desenvolvido em Java, com o objetivo de centralizar compromissos, avisos e tarefas em uma única aplicação de terminal.
 
 O projeto surgiu de uma necessidade cotidiana: organizar atividades que normalmente ficam distribuídas entre o Google Tarefas, Google Calendar e anotações físicas em um planner. A proposta é transformar essa experiência em uma aplicação própria, utilizando os conceitos de programação e orientação a objetos estudados durante minha formação em Java.
-
 
 ## 1. Origem e proposta
 
@@ -18,7 +15,6 @@ A ideia inicial foi criar uma ferramenta simples para reunir três necessidades 
 O desenvolvimento começou com um planejamento das funcionalidades, dos menus e das classes necessárias para representar cada elemento do sistema.
 
 Uma das preocupações desde o início foi manter uma estrutura organizada, separando a lógica de navegação das entidades responsáveis por representar os dados.
-
 
 ## 2. Desenvolvimento
 
@@ -39,25 +35,27 @@ Durante o desenvolvimento, foram utilizados conceitos como:
 - Estruturas condicionais e de repetição;
 - Modularização por meio de métodos.
 
-
 ## 3. Funcionalidades da versão 1.0
 
 ### Eventos
+
 - Cadastro de eventos ou compromissos com nome, data e horário.
 - Adição opcional de categoria.
 - Consulta dos próximos eventos.
 - Identificação e negação de eventos com datas anteriores à data atual.
 - Remoção de eventos pelo nome, ignorando diferenças entre letras maiúsculas e minúsculas.
-- Ordenação dos eventos por data.
+- Ordenação dos eventos por data de realização.
 - Exibição dos horários no formato de 12 horas (AM/PM).
 
 ### Avisos
+
 - Cadastro de avisos com título e descrição.
 - Consulta dos avisos registrados.
 - Ordenação alfabética pelo título.
-- Remoção de avisos pelo título, sem distinção entre letras maiúsculas e minúsculas.
+- Remoção de avisos pelo título (sem distinção entre letras maiúsculas e minúsculas)
 
 ### Tarefas
+
 - Cadastro de tarefas com nome.
 - Adição opcional de data e categoria.
 - Criação de subtarefas vinculadas a uma tarefa principal.
@@ -66,6 +64,20 @@ Durante o desenvolvimento, foram utilizados conceitos como:
 - Conclusão de tarefas sem a necessidade de removê-las manualmente da lista.
 - Remoção de tarefas pelo nome.
 - Ordenação por data, mantendo tarefas sem data ao final da lista.
+
+## 3.1. Melhorias implementadas na versão 1.1 — Tratamento de exceções
+
+Durante a evolução do projeto, foram iniciadas melhorias para aumentar a confiabilidade das entradas fornecidas pelo usuário e evitar interrupções inesperadas durante a execução.
+
+As alterações incluem:
+
+- Implementação de blocos `try-catch` para tratamento de entradas numéricas inválidas nos menus.
+- Tratamento de erros de conversão de datas e horários por meio de `DateTimeParseException`.
+- Validação de datas para impedir o cadastro de eventos com datas anteriores ao dia atual.
+- Implementação de estruturas de repetição para permitir que o usuário corrija informações inválidas sem precisar reiniciar a aplicação.
+- Utilização de `InputMismatchException` para identificar entradas incompatíveis com o tipo numérico esperado.
+
+Essas melhorias representam uma etapa importante na evolução do Life Manager, tornando a interação pelo terminal mais segura, previsível e controlada.
 
 ## 4. Tecnologias e recursos utilizados
 
@@ -89,10 +101,9 @@ Algumas características importantes:
 - Aplicação executada pelo terminal.
 - Dados armazenados temporariamente em memória por meio de `ArrayList`.
 - Não possui integração com banco de dados.
-- Não possui tratamento específico de exceções.
+- Não possui tratamento específico de exceções na versão inicial.
 - Não possui salvamento permanente em arquivos.
 - Eventos e tarefas recorrentes ainda não foram implementados.
-
 
 Os registros são mantidos enquanto o programa está em execução. Ao encerrá-lo, os dados cadastrados são perdidos.
 
@@ -108,17 +119,19 @@ Entre as possibilidades para versões futuras estão:
 - Melhorias na organização e apresentação das informações.
 - Possível evolução para uma interface gráfica.
 
-
 ## 7. Objetivo de aprendizado
 
-Mais do que desenvolver uma ferramenta de organização, este projeto representa uma oportunidade de aplicar conhecimentos de Java em uma situação prática.
+Mais do que desenvolver uma ferramenta de organização, este projeto representa uma oportunidade de aplicar conhecimentos de Java em uma situação prática cotidiana.
 
 A proposta é construir uma aplicação útil, evoluindo sua estrutura gradualmente e consolidando conceitos de lógica de programação, orientação a objetos e manipulação de coleções.
-
-## 
 
 **Projeto pessoal em desenvolvimento.**
 
 **Autor: Gabriel do Nascimento D'angelo**
 
-**Última atualização: 30/10/2026**
+**Última atualização: 23/11/2026**
+
+## 8. Histórico de versões
+
+- **Versão 1.0:** primeira versão funcional do Life Manager, com cadastro e gerenciamento de eventos, avisos e tarefas.
+- **Versão 1.1:** início da implementação do tratamento de exceções, validação de entradas numéricas nos menus e tratamento de datas e horários inválidos no cadastro de eventos.
