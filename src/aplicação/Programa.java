@@ -3,8 +3,10 @@ package aplicação;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -45,9 +47,14 @@ public class Programa {
 					System.out.println("(4) SAIR");
 					System.out.println();
 					System.out.print("Escolha uma opção: ");
-
-					opcao = Integer.parseInt(sc.nextLine());
-
+					
+					try {
+					opcao = sc.nextInt();
+					} catch (InputMismatchException e) {
+						
+							System.out.println("Opção inválida! Tente novamente. ");	
+							sc.nextLine();
+					}
 
 						switch (opcao) {
 
@@ -83,14 +90,14 @@ public class Programa {
 
 										break;
 
-
-												default:
-
-													System.out.println("Opção inválida!");
-
+										default:
+											
+											
+											
+											break;
 											}
 					
-						
+					
 						
 						
 				} 
@@ -108,8 +115,7 @@ public class Programa {
 			System.out.println("======================================================");
 			
 			if (eventos.isEmpty()) {
-				System.out.println();
-				System.out.println("Nenhum evento cadastrado! ");
+				System.out.println("\nNenhum evento cadastrado! ");
 			}
 				else {
 					
@@ -158,28 +164,30 @@ public class Programa {
 					int opcao = 0;
 					LocalDate data = LocalDate.now();
 					
-					// while (opcao != 5) {
 
 						System.out.println("\n========== EVENTOS ==========");
 						System.out.println();
-																						// System.out.println("(1) EVENTOS DESTA SEMANA");
+																						 
 						System.out.println("(1) VER PRÓXIMOS EVENTOS");
 						System.out.println("(2) CADASTRAR EVENTO");
 						System.out.println("(3) REMOVER EVENTO");
 						System.out.println("(4) VOLTAR");
 						
-						System.out.println();
+
 						System.out.println("===============================");
 						
 						
 						while (opcao < 4) {
 							
-						System.out.println();
-						System.out.print("Escolha uma opção: ");
+						System.out.print("\nEscolha uma opção: ");
 
-						opcao = Integer.parseInt(sc.nextLine());
-
-						// GABRIEL: Dúvida sobre o por que do Integer.parseInt nesse momento
+						try {
+						opcao = sc.nextInt();
+							} catch (InputMismatchException e) {
+							
+							System.out.println("Opção inválida! Tente novamente. ");	
+							sc.nextLine();
+							}
 
 						switch (opcao) {
 
@@ -198,8 +206,7 @@ public class Programa {
 						
 								else {
 								
-								System.out.println();
-								System.out.println("Nenhum evento cadastrado! ");
+								System.out.println("\nNenhum evento cadastrado! ");
 								System.out.println();
 								
 								}
@@ -213,28 +220,54 @@ public class Programa {
 
 									
 									System.out.println();
+									String nome;
+									sc.nextLine();
 									
-									System.out.print("Nome do evento: ");
-									String nome = sc.nextLine();
-									
-									while (data.isBefore(LocalDate.now())); {
+									do {
 										
-									System.out.print("Data: ");
-									String lerData = sc.nextLine();
-									
-									
+										System.out.print("Nome do evento: ");
+										nome = sc.nextLine();
+						
+										if (nome.isEmpty()) {
+											System.out.println("O evento não deverá ficar sem nome.");
+										}
+										
+									} while (nome.isEmpty()); 
+										
+									Boolean dataValida = false;	
+									Boolean horaValida = false;	
 									DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-									data = LocalDate.parse(lerData, fmt);
-									
-									
-											if (data.isBefore(LocalDate.now())) {
-												System.out.println("Data inválida! ");
+												
+												do {
+											
+												try {	
+												System.out.print("Data: ");
+												String lerData = sc.nextLine();
+												
+												data = LocalDate.parse(lerData, fmt);
+												
+													if (data.isBefore(LocalDate.now())) {
+														System.out.println("Data no passado! Cadastre novamente. ");
+													}
+													else {
+														dataValida = true;
+													} 
+												
+											} catch (DateTimeParseException e) {
+												System.out.println();
+												System.out.println("Data inexistente! Tente novamente.");
 											}
 									
-									} 
+									} while (!dataValida);
 									
-										
+												
+												
 											
+											
+										do {
+											
+											try {
+												
 											System.out.print("Horário: ");
 											String lerHora = sc.nextLine();
 									
@@ -245,9 +278,16 @@ public class Programa {
 											eventos.sort(Comparator.comparing(Evento::getData));
 											
 											System.out.println("Evento cadastrado!");
+											horaValida = true;
 											System.out.println();
-										
+											
+											} catch (DateTimeParseException e) {
+												System.out.println("Horário inválido! Tente novamente.");
+											}
 									
+										} while (!horaValida);
+											
+										
 									break;
 
 
@@ -255,8 +295,7 @@ public class Programa {
 
 										if (eventos.isEmpty() == false) {
 											
-											System.out.println();
-											System.out.println("Nome do evento que será removido: ");
+											System.out.println("\nNome do evento que será removido: ");
 											String removerEvento = sc.nextLine();
 											System.out.println();
 											
@@ -264,13 +303,11 @@ public class Programa {
 										
 												
 													if (eventoRemovido) {
-														System.out.println();
-														System.out.println("Evento removido! ");
+														System.out.println("\nEvento removido! ");
 														System.out.println();
 													}
 														else {
-															System.out.println();
-															System.out.println("Evento não encontrado!");
+															System.out.println("\nEvento não encontrado!");
 															System.out.println();
 														}
 										}
@@ -302,6 +339,8 @@ public class Programa {
 					System.out.println("Opção inválida!");
 					System.out.println();
 					
+					break;
+					
 						}
 						
 				}
@@ -318,25 +357,28 @@ public class Programa {
 
 				public static void menuAvisos(Scanner sc, ArrayList <Aviso> avisos, ArrayList <Evento> eventos) {
 
-					int opcao; 
+					int opcao = 0; 
 					
 					
 
 						System.out.println("\n========== AVISOS ==========");
-						System.out.println();
 						System.out.println("(1) ESCREVER AVISO");
 						System.out.println("(2) MOSTRAR AVISOS");
 						System.out.println("(3) REMOVER AVISO");
 						System.out.println("(4) VOLTAR");
-						System.out.println();
-						System.out.println("===============================");
+						System.out.println("\n===============================");
 						
 						do {
 							
-						System.out.println();	
-						System.out.print("Escolha uma opção: ");
+							System.out.print("\nEscolha uma opção: ");
 
-						opcao = Integer.parseInt(sc.nextLine());
+							try {
+							opcao = sc.nextInt();
+								} catch (InputMismatchException e) {
+								
+								System.out.println("Opção inválida! Tente novamente. ");	
+								sc.nextLine();
+								}
 
 
 						switch (opcao) {
@@ -370,8 +412,8 @@ public class Programa {
 								
 										else {
 										
-											System.out.println();
-											System.out.println("Nenhum lembrete registrado!");
+											
+											System.out.println("\nNenhum lembrete registrado!");
 										
 										}
 								
@@ -392,28 +434,25 @@ public class Programa {
 									
 														System.out.println("\n=========================");	
 														
-														System.out.println();
-														System.out.print("Lembrete que será removido:  ");
+														
+														System.out.print("\nLembrete que será removido:  ");
 														String removerAviso = sc.nextLine();
 														System.out.println();
 										
 										boolean avisoRemovido = avisos.removeIf(listaAvisos -> listaAvisos.getTitulo().equalsIgnoreCase(removerAviso));
 									
 														if (avisoRemovido) {
-															System.out.println();
-															System.out.println("Lembrete removido! ");
+															System.out.println("\nLembrete removido! ");
 														}
 														else {
-															System.out.println();
-															System.out.println("Lembrete não encontrado!");
+															System.out.println("\nLembrete não encontrado!");
 													}
 										
 									}
 									
 										else {
 										
-											System.out.println();
-											System.out.println("Nenhum lembrete registrado!");
+											System.out.println("\nNenhum lembrete registrado!");
 											
 										}
 									
@@ -446,7 +485,7 @@ public class Programa {
 
 				public static void menuTarefas(Scanner sc, ArrayList <Tarefa> tarefas, ArrayList <Evento> eventos) {
 
-					int opcao;
+					int opcao = 0;
 					Tarefa tarefa;
 					
 
@@ -463,9 +502,15 @@ public class Programa {
 						
 						do {
 							
-						System.out.print("Escolha uma opção: ");
+							System.out.print("Escolha uma opção: ");
 
-						opcao = Integer.parseInt(sc.nextLine());
+							try {
+							opcao = sc.nextInt();
+								} catch (InputMismatchException e) {
+								
+								System.out.println("Opção inválida! Tente novamente. ");	
+								sc.nextLine();
+								}
 
 					
 
@@ -536,9 +581,8 @@ public class Programa {
 												
 													SubTarefa subtarefa = new SubTarefa(nomeSubtarefa);
 													subtarefas.add(subtarefa);
-													
-												System.out.println();
-												System.out.print("Quer continuar? (S) (N) ");
+												
+												System.out.print("\nQuer continuar? (S) (N) ");
 												querContinuar = sc.next().toUpperCase().charAt(0);
 												sc.nextLine();
 												
@@ -648,16 +692,14 @@ public class Programa {
 									
 									
 										if (tarefaConcluida == false) {
-											System.out.println();
-										    System.out.println("Tarefa não encontrada!");
+										    System.out.println("\nTarefa não encontrada!");
 										}
 								
 								
 								
 								} else {
 										
-										System.out.println();
-										System.out.println("Nenhuma tarefa registrada! ");
+										System.out.println("\nNenhuma tarefa registrada! ");
 									}
 								
 								
@@ -676,20 +718,17 @@ public class Programa {
 									System.out.println();
 									
 											if (tarefaRemovida == true) {
-												System.out.println();
-												System.out.println("Tarefa removida!");
+												System.out.println("\nTarefa removida!");
 											}
 											else {
-												System.out.println();
-												System.out.println("Tarefa não encontrada!");
+												System.out.println("\nTarefa não encontrada!");
 												}
 									
 								}
 								
 								else {
-									
-									System.out.println();
-									System.out.println("Nenhuma tarefa registrada! ");
+
+									System.out.println("\nNenhuma tarefa registrada! ");
 									
 								}
 								
@@ -702,11 +741,6 @@ public class Programa {
 								
 								break;
 
-
-					default:
-
-					System.out.println();	
-					System.out.println("Opção inválida!");
 
 				}
 

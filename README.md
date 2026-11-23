@@ -67,6 +67,20 @@ Durante o desenvolvimento, foram utilizados conceitos como:
 - Remoção de tarefas pelo nome.
 - Ordenação por data, mantendo tarefas sem data ao final da lista.
 
+## 3.1. Melhorias implementadas na versão 1.1 - Tratamento de exceções
+
+Durante a evolução do projeto, foram iniciadas melhorias para aumentar a confiabilidade das entradas fornecidas pelo usuário e evitar interrupções inesperadas durante a execução.
+
+As alterações incluem:
+
+- Implementação de blocos `try-catch` para tratamento de entradas numéricas inválidas nos menus.
+- Tratamento de erros de conversão de datas e horários por meio de `DateTimeParseException`.
+- Validação de datas para impedir o cadastro de eventos com datas anteriores ao dia atual.
+- Implementação de estruturas de repetição para permitir que o usuário corrija informações inválidas sem precisar reiniciar a aplicação.
+- Utilização de `InputMismatchException` para identificar entradas incompatíveis com o tipo numérico esperado.
+
+Essas melhorias representam uma etapa importante na evolução do Life Manager, tornando a interação pelo terminal mais segura e controlada.
+
 ## 4. Tecnologias e recursos utilizados
 
 | Tecnologia / Recurso | Aplicação no projeto |
@@ -117,4 +131,9 @@ A proposta é construir uma aplicação útil, evoluindo sua estrutura gradualmente 
 
 **Projeto pessoal em desenvolvimento.**
 **Autor: Gabriel do Nascimento D'angelo**
-**Última atualização: 30/10/2026**
+**Última atualização: 23/11/2026**
+
+## 8. Histórico de versões
+
+- **Versão 1.0:** Primeira versão funcional do Life Manager, com cadastro e gerenciamento de eventos, avisos e tarefas.
+- **Versão 1.1:** Início da implementação do tratamento de exceções, validação de entradas numéricas nos menus e tratamento de datas e horários inválidos no cadastro de eventos.
